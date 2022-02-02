@@ -19,8 +19,4 @@ CloudDriverConfig:
           device: Samsung Galaxy S20 Plus
           app: bs://0468718e9e99985fc15a322dd4a0b6a248afd0a3
           os_version: 10
-    - Capabilities:
-        CapabilityMap:
-          os: ios
-          device: iPhone 11
-          app: bs://1a9c646c6400800650ebb567c9b83e9e78fcd946
+
