@@ -221,7 +221,7 @@ namespace BrowserStack.WebDriver.Core
             
             String temp;
             
-            return String.Format("{0}-{1}", buildName, buildSuffix);
+            return String.Format("{0}", buildSuffix);
             
         }
 
