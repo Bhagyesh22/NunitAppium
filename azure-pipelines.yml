@@ -17,7 +17,7 @@ steps:
       export CAPABILITIES_FILENAME=capabilities.yml
       dotnet restore
       dotnet build
-      dotnet test
+      dotnet test --filter "PerformLoginNoCreds"
 
 - task: BrowserStackResults@1
   inputs:
