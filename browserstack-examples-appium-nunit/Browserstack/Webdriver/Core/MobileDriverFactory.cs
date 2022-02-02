@@ -174,9 +174,9 @@ namespace BrowserStack.WebDriver.Core
             object Os = platformCapabilities.ToCapabilities().GetCapability("os");
             if (Os is not null && Os.ToString().ToLower().Equals(DeviceType.Android.ToString().ToLower()))
             {
-                if (Environment.GetEnvironmentVariable(BROWSERSTACK_ANDROID_APP_ID) != null)
+                if (Environment.GetEnvironmentVariable(app_url) != null)
                 {
-                    platformCapabilities.AddAdditionalCapability("app", Environment.GetEnvironmentVariable(BROWSERSTACK_ANDROID_APP_ID));
+                    platformCapabilities.AddAdditionalCapability("app", Environment.GetEnvironmentVariable(app_url));
                 }
 
                 driver = new AndroidDriver<AppiumWebElement>(new Uri(this.MobileDriverConfiguration.CloudDriverConfig.HubUrl), platformCapabilities);
