@@ -160,12 +160,8 @@ namespace BrowserStack.WebDriver.Core
                 platformCapabilities.AddAdditionalCapability("browserstack.localIdentifier", LocalFactory.GetInstance().GetLocalIdentifier());
             }
 
-            //object build = platformCapabilities.ToCapabilities().GetCapability("build");
-
-            //if (build is not null)
-            //{
+            
                 platformCapabilities.AddAdditionalCapability("build", Environment.GetEnvironmentVariable(BROWSERSTACK_BUILD_NAME));
-            //}
 
             return platformCapabilities;
         }
