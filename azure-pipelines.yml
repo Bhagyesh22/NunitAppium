@@ -6,14 +6,15 @@ pool:
 
 steps:
 
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'Bhagyesh''s Connection'
+
 - task: BrowserStackAppUploader@0
   inputs:
     appPath: 'SimpleApp_Android.apk'
     appCustomId: 'SampleApp'
 
-- task: BrowserStackConfig@0
-  inputs:
-    BrowserStackServiceEndPoint: 'Bhagyesh''s Connection'
 
 - task: CmdLine@2
   inputs:
