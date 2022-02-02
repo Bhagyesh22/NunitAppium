@@ -5,30 +5,22 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
 - task: BrowserStackConfig@0
-  name: 'BrowserStackConfiguration'
-  displayName: 'BrowserStack Configuration'
   inputs:
-    BrowserStackServiceEndPoint: 'BStack Demo Account'
+    BrowserStackServiceEndPoint: 'Bhagyesh''s Connection'
 
-- task: DotNetCoreCLI@2
-  name: 'RestoreProject'
-  displayName: 'Restore Project'
+- task: CmdLine@2
   inputs:
-    command: 'restore'
-    feedsToUse: 'select'
+    script: |
+      cd browserstack-examples-appium-nunit
+      export CAPABILITIES_FILENAME=capabilities.yml
+      dotnet restore
+      dotnet build
+      dotnet test
 
-- task: DotNetCoreCLI@2
-  name: 'BuildProject'
-  displayName: 'Build Project'
+- task: BrowserStackResults@1
   inputs:
-    command: 'build'
-- task: DotNetCoreCLI@2
-  name: 'TestProject'
-  displayName: 'Test Project'
-  inputs:
-    command: 'test'
-  env:
-    CAPABILITIES_FILENAME: capabilities.yml
-    BROWSERSTACK_ANDROID_APP_ID: SimpleApp_Android
-    BROWSERSTACK_IOS_APP_ID: SimpleApp_iOS
+    browserstackProduct: 'app-automate'
+
+    
