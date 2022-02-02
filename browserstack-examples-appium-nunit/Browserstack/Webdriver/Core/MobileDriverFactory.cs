@@ -19,12 +19,13 @@ namespace BrowserStack.WebDriver.Core
         private readonly string DEFAULT_CAPABILITIES_FILE = "capabilities.yml";
         private readonly string BROWSERSTACK_USERNAME = "BROWSERSTACK_USERNAME";
         private readonly string BROWSERSTACK_ACCESS_KEY = "BROWSERSTACK_ACCESS_KEY";
-        private readonly string BROWSERSTACK_ANDROID_APP_ID = "BROWSERSTACK_ANDROID_APP_ID";
+        //private readonly string BROWSERSTACK_ANDROID_APP_ID = "BROWSERSTACK_ANDROID_APP_ID";
         private readonly string BROWSERSTACK_APP_ID = "abcd";
         private readonly string BROWSERSTACK_IOS_APP_ID = "BROWSERSTACK_IOS_APP_ID";
         private readonly string BUILD_ID = "BROWSERSTACK_BUILD_NAME";
         private readonly string DEFAULT_BUILD_NAME = "browserstack-examples-appium_nunit";
         public readonly string CAPABILITIES_DIR = "/Browserstack/Webdriver/Resources/";
+        public readonly string BROWSERSTACK_BUILD_NAME= "abcd";
 
         private readonly MobileDriverConfiguration MobileDriverConfiguration;
         private readonly string DefaultBuildSuffix;
