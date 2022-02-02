@@ -160,8 +160,11 @@ namespace BrowserStack.WebDriver.Core
                 platformCapabilities.AddAdditionalCapability("browserstack.localIdentifier", LocalFactory.GetInstance().GetLocalIdentifier());
             }
 
-            
-                platformCapabilities.AddAdditionalCapability("build", Environment.GetEnvironmentVariable(BROWSERSTACK_BUILD_NAME));
+            object build = platformCapabilities.ToCapabilities().GetCapability(“build”);
+            if (build is not null)
+                {
+                platformCapabilities.AddAdditionalCapability("build", CreateBuildName(build.ToString()));
+                }
 
             return platformCapabilities;
         }
@@ -215,8 +218,11 @@ namespace BrowserStack.WebDriver.Core
             {
                 buildSuffix = this.DefaultBuildSuffix;
             }
-
-            return String.Format("{0}-{1}", buildName, buildSuffix);
+            
+            String temp;
+            
+            return Environment.GetEnvironmentVariable(BROWSERSTACK_BUILD_NAME);
+            
         }
 
 
