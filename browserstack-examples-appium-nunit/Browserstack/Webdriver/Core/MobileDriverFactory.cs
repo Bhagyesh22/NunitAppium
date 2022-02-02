@@ -221,7 +221,7 @@ namespace BrowserStack.WebDriver.Core
             
             String temp;
             
-            return Environment.GetEnvironmentVariable(BROWSERSTACK_BUILD_NAME);
+            return String.Format("{0}-{1}", buildName, buildSuffix);
             
         }
 
